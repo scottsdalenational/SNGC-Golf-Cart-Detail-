@@ -2,245 +2,101 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Golf Cart Detailing Hub</title>
 <style>
-:root{
-  --navy:#15375a; --navy2:#0e2945; --blue:#3a75ad; --green:#5b7f2f; --green2:#6b9638;
-  --red:#b42318; --amber:#b7791f; --ink:#172033; --muted:#667085; --line:#e6eaf0;
-  --bg:#f4f7fb; --panel:#fff; --softBlue:#eaf3fb; --softGreen:#edf5e7;
-  --softRed:#fdecea; --softAmber:#fff6dd; --shadow:0 12px 34px rgba(21,55,90,.08);
-}
-*{box-sizing:border-box}
-body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:var(--bg)}
-button,input,select{font:inherit}
-.app{min-height:100vh;display:grid;grid-template-columns:250px 1fr}
-.side{background:linear-gradient(180deg,var(--navy),var(--navy2));color:#fff;padding:22px 18px;display:flex;flex-direction:column;position:sticky;top:0;height:100vh}
-.brand{display:flex;align-items:center;gap:12px;margin-bottom:26px}
-.logo{width:44px;height:44px;border-radius:12px;background:#fff;color:var(--navy);display:grid;place-items:center;font-weight:900}
-.brand h1{font-size:16px;margin:0}.brand p{font-size:12px;color:#cbd9e7;margin:3px 0 0}
-.nav{display:grid;gap:7px}.nav button{border:0;background:transparent;color:#dbe7f3;text-align:left;padding:11px 13px;border-radius:10px;cursor:pointer}
-.nav button:hover,.nav button.active{background:rgba(255,255,255,.12);color:#fff}
-.sidefoot{margin-top:auto;color:#b9c8d8;font-size:12px;line-height:1.5}
-.main{padding:28px;min-width:0}.view{display:none}.view.active{display:block}
-.pagehead{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;margin-bottom:20px}
-.eyebrow{font-size:11px;letter-spacing:.12em;font-weight:900;color:var(--blue);margin:0 0 6px}
-h2{font-size:30px;margin:0}.sub{color:var(--muted);margin:6px 0 0}
-.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:18px}
-.kpi{background:#fff;border:1px solid var(--line);border-radius:16px;padding:17px;box-shadow:var(--shadow)}
-.kpi span{display:block;color:var(--muted);font-size:12px;margin-bottom:7px}.kpi strong{font-size:29px}
-.grid2{display:grid;grid-template-columns:1.35fr 1fr;gap:18px;margin-bottom:18px}
-.panel{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
-.ph{padding:15px 17px;color:#fff;display:flex;justify-content:space-between;align-items:center}.ph h3{margin:0;font-size:20px}.ph p{margin:0 0 4px;font-size:10px;letter-spacing:.1em;font-weight:800;opacity:.78}
-.ph.red{background:linear-gradient(135deg,#9e1d16,var(--red))}.ph.green{background:linear-gradient(135deg,#426224,var(--green2))}.ph.blue{background:linear-gradient(135deg,var(--navy),var(--blue))}
-.pill{border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.15);padding:5px 9px;border-radius:999px;font-size:11px}
-.priority{padding:8px 14px 14px}.prow{display:grid;grid-template-columns:42px 1fr 1.2fr .8fr 1fr;gap:10px;align-items:center;padding:12px 8px;border-bottom:1px solid var(--line)}.prow:last-child{border-bottom:0}
-.rank{width:29px;height:29px;border-radius:50%;display:grid;place-items:center;background:var(--softRed);color:var(--red);font-weight:900}.cartno{font-size:18px;font-weight:900}.lbl{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;margin-bottom:2px}
+:root{--navy:#15375a;--navy2:#0e2945;--blue:#3a75ad;--green:#5b7f2f;--red:#b42318;--amber:#b7791f;--ink:#172033;--muted:#667085;--line:#e6eaf0;--bg:#f4f7fb;--panel:#fff;--softBlue:#eaf3fb;--softGreen:#edf5e7;--softRed:#fdecea;--softAmber:#fff6dd;--shadow:0 12px 34px rgba(21,55,90,.08)}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:var(--bg)}button,input,select{font:inherit}
+.app{min-height:100vh;display:grid;grid-template-columns:250px 1fr}.side{background:linear-gradient(180deg,var(--navy),var(--navy2));color:#fff;padding:22px 18px;display:flex;flex-direction:column;position:sticky;top:0;height:100vh}
+.brand{display:flex;align-items:center;gap:12px;margin-bottom:26px}.logo{width:44px;height:44px;border-radius:12px;background:#fff;color:var(--navy);display:grid;place-items:center;font-weight:900}.brand h1{font-size:16px;margin:0}.brand p{font-size:12px;color:#cbd9e7;margin:3px 0 0}
+.nav{display:grid;gap:7px}.nav button{border:0;background:transparent;color:#dbe7f3;text-align:left;padding:11px 13px;border-radius:10px;cursor:pointer}.nav button:hover,.nav button.active{background:rgba(255,255,255,.12);color:#fff}.sidefoot{margin-top:auto;color:#b9c8d8;font-size:12px;line-height:1.5}
+.main{padding:28px;min-width:0}.view{display:none}.view.active{display:block}.pagehead{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;margin-bottom:20px}.eyebrow{font-size:11px;letter-spacing:.12em;font-weight:900;color:var(--blue);margin:0 0 6px}h2{font-size:30px;margin:0}.sub{color:var(--muted);margin:6px 0 0}
+.cloud{font-size:12px;font-weight:800;padding:7px 10px;border-radius:999px;background:var(--softAmber);color:var(--amber)}.cloud.ok{background:var(--softGreen);color:var(--green)}.cloud.bad{background:var(--softRed);color:var(--red)}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:18px}.kpi{background:#fff;border:1px solid var(--line);border-radius:16px;padding:17px;box-shadow:var(--shadow)}.kpi span{display:block;color:var(--muted);font-size:12px;margin-bottom:7px}.kpi strong{font-size:29px}
+.grid2{display:grid;grid-template-columns:1.35fr 1fr;gap:18px;margin-bottom:18px}.panel{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}.ph{padding:15px 17px;color:#fff;display:flex;justify-content:space-between;align-items:center}.ph h3{margin:0;font-size:20px}.ph p{margin:0 0 4px;font-size:10px;letter-spacing:.1em;font-weight:800;opacity:.78}.ph.red{background:linear-gradient(135deg,#9e1d16,var(--red))}.ph.green{background:linear-gradient(135deg,#426224,#6b9638)}.ph.blue{background:linear-gradient(135deg,var(--navy),var(--blue))}.pill{border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.15);padding:5px 9px;border-radius:999px;font-size:11px}
+.priority{padding:8px 14px 14px}.prow{display:grid;grid-template-columns:42px 1fr 1.2fr .8fr 1fr;gap:10px;align-items:center;padding:12px 8px;border-bottom:1px solid var(--line)}.rank{width:29px;height:29px;border-radius:50%;display:grid;place-items:center;background:var(--softRed);color:var(--red);font-weight:900}.cartno{font-size:18px;font-weight:900}.lbl{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;margin-bottom:2px}
 .chip{display:inline-flex;padding:4px 8px;border-radius:999px;font-size:11px;font-weight:800}.due{background:var(--softRed);color:var(--red)}.priorityChip{background:#fff0e7;color:#a34c00}.soon{background:var(--softAmber);color:var(--amber)}.good{background:var(--softGreen);color:var(--green)}
-.leaders{padding:8px 16px 14px}.lrow{display:grid;grid-template-columns:50px 1fr 70px;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}.lrow:last-child{border-bottom:0}.lrank{font-weight:900;color:var(--green)}.lname{font-weight:800}.lcred{text-align:right;font-weight:900}
-.entry{margin-bottom:18px}.formrow{display:grid;grid-template-columns:1fr 1.15fr 1.15fr 1.15fr auto;gap:11px;padding:18px;align-items:end}
-label span{display:block;font-size:12px;font-weight:800;margin-bottom:6px}label em{font-weight:500;color:var(--muted)}
-select,input{width:100%;padding:11px 12px;border:1px solid #ccd4df;border-radius:10px;background:#fff}
-select:focus,input:focus{outline:2px solid #bed9f1;border-color:var(--blue)}
-.primary,.secondary,.mini{border:0;border-radius:10px;padding:11px 15px;font-weight:800;cursor:pointer}.primary{background:var(--green);color:#fff}.primary:hover{background:#496b28}.secondary{background:#fff;border:1px solid var(--line)}.mini{background:#fff;border:1px solid var(--line);font-size:12px;padding:7px 9px}
-.help{padding:0 18px 18px;color:var(--muted);font-size:12px;margin:0}
-.tablewrap{overflow:auto;max-height:calc(100vh - 180px)}table{width:100%;border-collapse:collapse;min-width:820px}thead th{position:sticky;top:0;background:var(--navy);color:#fff;padding:11px;text-align:left;font-size:12px;z-index:1}tbody td{padding:10px 11px;border-bottom:1px solid var(--line);font-size:13px}tbody tr:hover{background:#f8fafc}
-.filters{display:flex;gap:10px;padding:14px}.filters input,.filters select{max-width:220px}
-.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.ecard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow)}.ecard.inactive{opacity:.55}.ecardtop{display:flex;justify-content:space-between;gap:10px}.ecard h4{margin:0}.ecard p{margin:5px 0 0;color:var(--muted);font-size:12px}.actions{display:flex;gap:8px;margin-top:13px}.danger{color:var(--red)}
-.managerForm{display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:11px;padding:18px;align-items:end;margin-bottom:18px}
-.toast{position:fixed;right:24px;bottom:24px;background:var(--navy);color:#fff;padding:13px 15px;border-radius:11px;box-shadow:var(--shadow);opacity:0;transform:translateY(100px);transition:.22s;pointer-events:none}.toast.show{opacity:1;transform:translateY(0)}
-.note{background:var(--softBlue);border:1px solid #cfe1f0;border-radius:14px;padding:14px 16px;color:#365a76;font-size:13px;margin-bottom:18px}
-.backuprow{display:flex;gap:10px;flex-wrap:wrap}
-@media(max-width:980px){.app{grid-template-columns:1fr}.side{position:static;height:auto}.nav{grid-template-columns:repeat(5,minmax(120px,1fr));overflow-x:auto}.sidefoot{display:none}.kpis,.grid2{grid-template-columns:1fr 1fr}.formrow,.managerForm{grid-template-columns:1fr 1fr}.cards{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.main{padding:15px}.kpis,.grid2,.formrow,.managerForm,.cards{grid-template-columns:1fr}.prow{grid-template-columns:38px 1fr}.prow>div:nth-child(n+3){grid-column:2}}
+.leaders{padding:8px 16px 14px}.lrow{display:grid;grid-template-columns:50px 1fr 70px;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}.lrank{font-weight:900;color:var(--green)}.lname{font-weight:800}.lcred{text-align:right;font-weight:900}
+.entry{margin-bottom:18px}.formrow{display:grid;grid-template-columns:1fr 1.15fr 1.15fr 1.15fr auto;gap:11px;padding:18px;align-items:end}label span{display:block;font-size:12px;font-weight:800;margin-bottom:6px}label em{font-weight:500;color:var(--muted)}select,input{width:100%;padding:11px 12px;border:1px solid #ccd4df;border-radius:10px;background:#fff}.primary,.secondary,.mini{border:0;border-radius:10px;padding:11px 15px;font-weight:800;cursor:pointer}.primary{background:var(--green);color:#fff}.secondary{background:#fff;border:1px solid var(--line)}.mini{background:#fff;border:1px solid var(--line);font-size:12px;padding:7px 9px}.help{padding:0 18px 18px;color:var(--muted);font-size:12px;margin:0}
+.tablewrap{overflow:auto;max-height:calc(100vh - 180px)}table{width:100%;border-collapse:collapse;min-width:820px}thead th{position:sticky;top:0;background:var(--navy);color:#fff;padding:11px;text-align:left;font-size:12px;z-index:1}tbody td{padding:10px 11px;border-bottom:1px solid var(--line);font-size:13px}.filters{display:flex;gap:10px;padding:14px}.filters input,.filters select{max-width:220px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.ecard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow)}.ecard.inactive{opacity:.55}.ecardtop{display:flex;justify-content:space-between;gap:10px}.ecard h4{margin:0}.ecard p{margin:5px 0 0;color:var(--muted);font-size:12px}.actions{display:flex;gap:8px;margin-top:13px}.managerForm{display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:11px;padding:18px;align-items:end;margin-bottom:18px}.toast{position:fixed;right:24px;bottom:24px;background:var(--navy);color:#fff;padding:13px 15px;border-radius:11px;box-shadow:var(--shadow);opacity:0;transform:translateY(100px);transition:.22s;pointer-events:none}.toast.show{opacity:1;transform:translateY(0)}.note{background:var(--softBlue);border:1px solid #cfe1f0;border-radius:14px;padding:14px 16px;color:#365a76;font-size:13px;margin-bottom:18px}
+@media(max-width:980px){.app{grid-template-columns:1fr}.side{position:static;height:auto}.nav{grid-template-columns:repeat(5,minmax(120px,1fr));overflow-x:auto}.sidefoot{display:none}.kpis,.grid2{grid-template-columns:1fr 1fr}.formrow,.managerForm{grid-template-columns:1fr 1fr}.cards{grid-template-columns:1fr 1fr}}@media(max-width:640px){.main{padding:15px}.kpis,.grid2,.formrow,.managerForm,.cards{grid-template-columns:1fr}.prow{grid-template-columns:38px 1fr}.prow>div:nth-child(n+3){grid-column:2}}
 </style>
 </head>
 <body>
-<div class="app">
-  <aside class="side">
-    <div class="brand"><div class="logo">GC</div><div><h1>Golf Cart Detailing</h1><p>Cart Barn Operations</p></div></div>
-    <div class="nav">
-      <button class="active" data-view="dashboard">Dashboard</button>
-      <button data-view="carts">Cart Status</button>
-      <button data-view="employees">Employee Status</button>
-      <button data-view="history">History</button>
-      <button data-view="manage">Manage Employees</button>
-    </div>
-    <div class="sidefoot">Rolling 30-day system<br><span id="clock"></span></div>
-  </aside>
+<div class="app"><aside class="side"><div class="brand"><div class="logo">GC</div><div><h1>Golf Cart Detailing</h1><p>Cart Barn Operations</p></div></div><div class="nav"><button class="active" data-view="dashboard">Dashboard</button><button data-view="carts">Cart Status</button><button data-view="employees">Employee Status</button><button data-view="history">History</button><button data-view="manage">Manage Employees</button></div><div class="sidefoot">Shared rolling 30-day system<br><span id="clock"></span></div></aside>
+<main class="main">
+<section class="view active" id="dashboard"><div class="pagehead"><div><p class="eyebrow">LIVE OPERATIONS</p><h2>Dashboard</h2><p class="sub">Every completed detail starts that cart's next 30-day cycle.</p></div><span id="cloud" class="cloud">Connecting…</span></div>
+<div class="kpis"><div class="kpi"><span>Fleet current</span><strong id="kpiCurrent">—</strong></div><div class="kpi"><span>Carts due now</span><strong id="kpiDue">—</strong></div><div class="kpi"><span>Due in next 7 days</span><strong id="kpiSoon">—</strong></div><div class="kpi"><span>Active employees</span><strong id="kpiEmployees">—</strong></div></div>
+<div class="grid2"><div class="panel"><div class="ph red"><div><p>PRIORITY QUEUE</p><h3>Top 5 Carts</h3></div><span class="pill" id="queuePill">Rolling 30 days</span></div><div class="priority" id="topFive"></div></div><div class="panel"><div class="ph green"><div><p>ROLLING 30-DAY LEADERBOARD</p><h3>Cart Barn Killers</h3></div><span class="pill">Live</span></div><div class="leaders" id="leaders"></div></div></div>
+<div class="panel entry"><div class="ph blue"><div><p>ONE-LINE ENTRY</p><h3>Log a Completed Detail</h3></div></div><form class="formrow" id="detailForm"><label><span>Cart #</span><select id="cartSelect" required></select></label><label><span>Detail date</span><input id="detailDate" type="date" required></label><label><span>Initial 1</span><select id="initial1" required></select></label><label><span>Initial 2 <em>(optional)</em></span><select id="initial2"></select></label><button class="primary" type="submit">Confirm Detail</button></form><p class="help">Shared cloud data: a completed detail updates the cart timer, priority queue, employee credits, leaderboard and history for everyone using the site. One employee = 1.0 credit; two employees = 0.5 each.</p></div></section>
 
-  <main class="main">
-    <section class="view active" id="dashboard">
-      <div class="pagehead"><div><p class="eyebrow">LIVE OPERATIONS</p><h2>Dashboard</h2><p class="sub">No monthly reset. Every completed detail starts that cart's next 30-day cycle.</p></div></div>
+<section class="view" id="carts"><div class="pagehead"><div><p class="eyebrow">FULL FLEET</p><h2>Cart Status</h2><p class="sub">Carts 6–95, sorted from most urgent to least urgent.</p></div></div><div class="panel"><div class="filters"><input id="cartSearch" placeholder="Search cart #"><select id="statusFilter"><option value="">All statuses</option><option>DUE</option><option>PRIORITY</option><option>DUE SOON</option><option>GOOD</option></select></div><div class="tablewrap"><table><thead><tr><th>Rank</th><th>Cart</th><th>Last Detailed</th><th>Days Since</th><th>Due Date</th><th>Status</th><th>Last Initials</th></tr></thead><tbody id="cartRows"></tbody></table></div></div></section>
 
-      <div class="kpis">
-        <div class="kpi"><span>Fleet current</span><strong id="kpiCurrent">0%</strong></div>
-        <div class="kpi"><span>Carts due now</span><strong id="kpiDue">0</strong></div>
-        <div class="kpi"><span>Due in next 7 days</span><strong id="kpiSoon">0</strong></div>
-        <div class="kpi"><span>Active employees</span><strong id="kpiEmployees">0</strong></div>
-      </div>
+<section class="view" id="employees"><div class="pagehead"><div><p class="eyebrow">TEAM</p><h2>Employee Status</h2><p class="sub">Rolling 90-cart workload, weighted FT 1.0 / PT 0.5 and rounded up to the next half-cart.</p></div></div><div class="panel"><div class="tablewrap"><table><thead><tr><th>Need Rank</th><th>Employee</th><th>Initials</th><th>Type</th><th>Rolling Quota</th><th>Credits (30d)</th><th>Left</th><th>Status</th></tr></thead><tbody id="employeeRows"></tbody></table></div></div></section>
 
-      <div class="grid2">
-        <div class="panel">
-          <div class="ph red"><div><p>PRIORITY QUEUE</p><h3>Top 5 Carts</h3></div><span class="pill" id="queuePill">Rolling 30 days</span></div>
-          <div class="priority" id="topFive"></div>
-        </div>
-        <div class="panel">
-          <div class="ph green"><div><p>ROLLING 30-DAY LEADERBOARD</p><h3>Cart Barn Killers</h3></div><span class="pill">Live</span></div>
-          <div class="leaders" id="leaders"></div>
-        </div>
-      </div>
+<section class="view" id="history"><div class="pagehead"><div><p class="eyebrow">AUDIT TRAIL</p><h2>History</h2><p class="sub">Latest 200 shared detail records.</p></div><button class="secondary" id="csvBtn">Export CSV</button></div><div class="panel"><div class="tablewrap"><table><thead><tr><th>Date</th><th>Cart</th><th>Initial 1</th><th>Initial 2</th><th>Employee 1</th><th>Employee 2</th><th>Credit</th><th>Next Due</th></tr></thead><tbody id="historyRows"></tbody></table></div></div></section>
 
-      <div class="panel entry">
-        <div class="ph blue"><div><p>ONE-LINE ENTRY</p><h3>Log a Completed Detail</h3></div></div>
-        <form class="formrow" id="detailForm">
-          <label><span>Cart #</span><select id="cartSelect" required></select></label>
-          <label><span>Detail date</span><input id="detailDate" type="date" required></label>
-          <label><span>Initial 1</span><select id="initial1" required></select></label>
-          <label><span>Initial 2 <em>(optional)</em></span><select id="initial2"></select></label>
-          <button class="primary" type="submit">Confirm Detail</button>
-        </form>
-        <p class="help">Confirming updates every page immediately: the cart's timer resets to 0 days, its due date becomes 30 days later, it drops down the queue, the next cart enters the Top 5, Employee Status updates, History is saved, and Cart Barn Killers re-ranks. One employee = 1.0 credit; two employees = 0.5 each.</p>
-      </div>
-    </section>
-
-    <section class="view" id="carts">
-      <div class="pagehead"><div><p class="eyebrow">FULL FLEET</p><h2>Cart Status</h2><p class="sub">Carts 6–95, always sorted from most urgent to least urgent.</p></div></div>
-      <div class="panel">
-        <div class="filters"><input id="cartSearch" placeholder="Search cart #"><select id="statusFilter"><option value="">All statuses</option><option>DUE</option><option>PRIORITY</option><option>DUE SOON</option><option>GOOD</option></select></div>
-        <div class="tablewrap"><table><thead><tr><th>Rank</th><th>Cart</th><th>Last Detailed</th><th>Days Since</th><th>Due Date</th><th>Status</th><th>Last Initials</th></tr></thead><tbody id="cartRows"></tbody></table></div>
-      </div>
-    </section>
-
-    <section class="view" id="employees">
-      <div class="pagehead"><div><p class="eyebrow">TEAM</p><h2>Employee Status</h2><p class="sub">Quota is the rolling 90-cart workload split across active staff and rounded up to the next 0.5 cart.</p></div></div>
-      <div class="panel"><div class="tablewrap"><table><thead><tr><th>Need Rank</th><th>Employee</th><th>Initials</th><th>Type</th><th>Rolling Quota</th><th>Credits (30d)</th><th>Left</th><th>Status</th></tr></thead><tbody id="employeeRows"></tbody></table></div></div>
-    </section>
-
-    <section class="view" id="history">
-      <div class="pagehead"><div><p class="eyebrow">AUDIT TRAIL</p><h2>History</h2><p class="sub">Keeps the newest 200 detail records and automatically removes the oldest beyond 200.</p></div><button class="secondary" id="csvBtn">Export CSV</button></div>
-      <div class="panel"><div class="tablewrap"><table><thead><tr><th>Date</th><th>Cart</th><th>Initial 1</th><th>Initial 2</th><th>Employee 1</th><th>Employee 2</th><th>Credit</th><th>Next Due</th></tr></thead><tbody id="historyRows"></tbody></table></div></div>
-    </section>
-
-    <section class="view" id="manage">
-      <div class="pagehead"><div><p class="eyebrow">MANAGEMENT</p><h2>Manage Employees</h2><p class="sub">Add or deactivate staff. Every quota recalculates automatically.</p></div></div>
-      <div class="note"><strong>Quota logic:</strong> full-time weight = 1.0, part-time weight = 0.5. The 90-cart workload is distributed by active weight and each person's quota is always rounded UP to the nearest half-cart.</div>
-      <div class="panel">
-        <form class="managerForm" id="employeeForm">
-          <label><span>Name</span><input id="empName" required placeholder="Employee name"></label>
-          <label><span>Initials</span><input id="empInitials" required maxlength="5" placeholder="AB"></label>
-          <label><span>Type</span><select id="empType"><option value="full">Full Time</option><option value="part">Part Time</option></select></label>
-          <button class="primary" type="submit">Add Employee</button>
-        </form>
-      </div>
-      <div class="cards" id="employeeCards" style="margin-top:18px"></div>
-
-      <div class="panel" style="margin-top:18px;padding:18px">
-        <h3 style="margin-top:0">Backup & Restore</h3>
-        <p class="sub">Use this if you move the site to another computer or want a safety copy.</p>
-        <div class="backuprow" style="margin-top:14px">
-          <button class="secondary" id="exportBackup">Download Backup</button>
-          <label class="secondary" style="cursor:pointer">Restore Backup<input id="importBackup" type="file" accept=".json" style="display:none"></label>
-        </div>
-      </div>
-    </section>
-  </main>
-</div>
-<div class="toast" id="toast"></div>
+<section class="view" id="manage"><div class="pagehead"><div><p class="eyebrow">MANAGEMENT</p><h2>Manage Employees</h2><p class="sub">Add or activate/deactivate staff. Changes are shared.</p></div></div><div class="note"><strong>Quota logic:</strong> full-time weight = 1.0, part-time weight = 0.5. The 90-cart workload is distributed by active weight and rounded UP to the nearest half-cart.</div><div class="panel"><form class="managerForm" id="employeeForm"><label><span>Name</span><input id="empName" required placeholder="Employee name"></label><label><span>Initials</span><input id="empInitials" required maxlength="5" placeholder="AB"></label><label><span>Type</span><select id="empType"><option value="full">Full Time</option><option value="part">Part Time</option></select></label><button class="primary" type="submit">Add Employee</button></form></div><div class="cards" id="employeeCards" style="margin-top:18px"></div></section>
+</main></div><div class="toast" id="toast"></div>
 
 <script>
-const KEY="gc-detailing-integrated-v2", LIMIT=200, FLEET=Array.from({length:90},(_,i)=>i+6);
-const DEFAULT_EMPLOYEES=[
-["Auston Hillman","AH","part"],["Brady Weedin","BW","full"],["Carter Rae","CR","full"],["Cole Graham","CG","full"],
-["Kenneth Messier","KM","part"],["Nick Barten","NB","full"],["Sammy Meranda","SM","full"],["Silas Kniegge","SK","full"],
-["Bo Jewell","BJ","full"],["Nick Tormey","NT","full"],["Tyler Padia","TP","full"],["Bill Bals","BB","full"],
-["Rich Lundgren","RL","full"],["Matt Reed","MR","full"]
-].map(x=>({name:x[0],initials:x[1],type:x[2],active:true}));
+const SUPABASE_URL="https://sjglnubuzsqfzurxhacw.supabase.co";
+const SUPABASE_KEY="sb_publishable_qwmyUjym1RuPkJa8Nh12oA_izcgxjOV";
+const LIMIT=200;
+let state={carts:[],employees:[],history:[]};
 
 function ds(d=new Date()){return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`}
-function pd(s){let [y,m,d]=s.split("-").map(Number);return new Date(y,m-1,d)}
+function pd(s){let [y,m,d]=String(s).split("-").map(Number);return new Date(y,m-1,d)}
 function plus(s,n){let d=pd(s);d.setDate(d.getDate()+n);return ds(d)}
 function diff(a,b=ds()){return Math.floor((pd(b)-pd(a))/86400000)}
 function fmt(s){if(!s)return"—";let d=pd(s);return `${d.getMonth()+1}/${d.getDate()}/${String(d.getFullYear()).slice(-2)}`}
 function halfup(n){return Math.ceil(n*2-1e-9)/2}
+function toast(x){let t=document.querySelector("#toast");t.textContent=x;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2800)}
+function cloud(text,kind=""){let c=document.querySelector("#cloud");c.textContent=text;c.className="cloud "+kind}
 
-function baseline(){
-  let today=pd(ds()), urgent=new Map([[12,31],[27,30],[43,29],[58,28],[76,27],[88,26],[31,25],[64,24]]);
-  return FLEET.map((cart,i)=>{let days=urgent.has(cart)?urgent.get(cart):((i*7+cart*3)%21);let d=new Date(today);d.setDate(d.getDate()-days);return{cart,lastDetailed:ds(d),lastInitials:"START"}})
+async function api(path,opts={}){
+ const headers={apikey:SUPABASE_KEY,Authorization:`Bearer ${SUPABASE_KEY}`,"Content-Type":"application/json",Prefer:"return=representation",...(opts.headers||{})};
+ const r=await fetch(`${SUPABASE_URL}/rest/v1/${path}`,{...opts,headers});
+ if(!r.ok)throw new Error(await r.text()||`Request failed ${r.status}`);
+ if(r.status===204)return null;let t=await r.text();return t?JSON.parse(t):null;
 }
-function fresh(){return{carts:baseline(),employees:DEFAULT_EMPLOYEES,history:[]}}
-function load(){try{let x=JSON.parse(localStorage.getItem(KEY));if(x&&x.carts&&x.employees&&x.history)return x}catch(e){}let s=fresh();localStorage.setItem(KEY,JSON.stringify(s));return s}
-let state=load();
-const save=()=>localStorage.setItem(KEY,JSON.stringify(state));
-function meta(c){let days=Math.max(0,diff(c.lastDetailed)),due=plus(c.lastDetailed,30),status=days>=30?"DUE":days>=27?"PRIORITY":days>=21?"DUE SOON":"GOOD";return{...c,days,due,status,score:days*1000+c.cart}}
+async function loadShared(silent=false){
+ try{
+  if(!silent)cloud("Syncing…");
+  const [c,e,h]=await Promise.all([
+   api("carts?select=cart_number,last_detailed,last_initials&order=cart_number.asc"),
+   api("employees?select=id,name,initials,employee_type,active&order=name.asc"),
+   api("detail_history?select=id,cart_number,detail_date,employee_1,employee_2,created_at&order=created_at.desc&limit=200")
+  ]);
+  state.carts=(c||[]).map(x=>({cart:Number(x.cart_number),lastDetailed:x.last_detailed,lastInitials:x.last_initials||""}));
+  state.employees=(e||[]).map(x=>({id:x.id,name:x.name,initials:x.initials,type:x.employee_type,active:x.active}));
+  state.history=(h||[]).map(x=>({id:x.id,cart:Number(x.cart_number),date:x.detail_date,initial1:x.employee_1,initial2:x.employee_2||"",createdAt:x.created_at})).reverse();
+  render();cloud("Shared data connected","ok");
+ }catch(err){console.error(err);cloud("Database connection error","bad");if(!silent)toast("Could not load shared data.");}
+}
+function meta(c){let days=c.lastDetailed?Math.max(0,diff(c.lastDetailed)):9999,due=c.lastDetailed?plus(c.lastDetailed,30):"",status=days>=30?"DUE":days>=27?"PRIORITY":days>=21?"DUE SOON":"GOOD";return{...c,days,due,status,score:days*1000+c.cart}}
 function sorted(){return state.carts.map(meta).sort((a,b)=>b.score-a.score)}
-function rollingHistory(){let cutoff=new Date();cutoff.setDate(cutoff.getDate()-29);let c=ds(cutoff);return state.history.filter(h=>h.date>=c&&h.date<=ds())}
+function rollingHistory(){let d=new Date();d.setDate(d.getDate()-29);let cutoff=ds(d);return state.history.filter(h=>h.date>=cutoff&&h.date<=ds())}
 function creditMap(){let m=new Map(state.employees.map(e=>[e.initials,0]));for(let h of rollingHistory()){if(h.initial2){m.set(h.initial1,(m.get(h.initial1)||0)+.5);m.set(h.initial2,(m.get(h.initial2)||0)+.5)}else m.set(h.initial1,(m.get(h.initial1)||0)+1)}return m}
 function quotas(){let active=state.employees.filter(e=>e.active),tw=active.reduce((s,e)=>s+(e.type==="part"?.5:1),0)||1,cm=creditMap();return state.employees.map(e=>{let q=e.active?halfup(90*(e.type==="part"?.5:1)/tw):0,c=cm.get(e.initials)||0;return{...e,quota:q,credits:c,left:Math.max(0,q-c)}})}
 function sclass(s){return s==="DUE"?"due":s==="PRIORITY"?"priorityChip":s==="DUE SOON"?"soon":"good"}
 
-function renderDashboard(){
- let carts=sorted(), top=carts.slice(0,5), current=carts.filter(c=>c.days<30).length;
- document.querySelector("#kpiCurrent").textContent=Math.round(current/90*100)+"%";
- document.querySelector("#kpiDue").textContent=carts.filter(c=>c.status==="DUE").length;
- document.querySelector("#kpiSoon").textContent=carts.filter(c=>c.days>=23&&c.days<30).length;
- document.querySelector("#kpiEmployees").textContent=state.employees.filter(e=>e.active).length;
- document.querySelector("#queuePill").textContent=`${carts.filter(c=>c.status==="DUE").length} due now`;
- document.querySelector("#topFive").innerHTML=top.map((c,i)=>`<div class="prow"><div class="rank">${i+1}</div><div><span class="lbl">Cart</span><span class="cartno">#${c.cart}</span></div><div><span class="lbl">Last detailed</span><strong>${fmt(c.lastDetailed)}</strong></div><div><span class="lbl">Days since</span><strong>${c.days}</strong></div><div><span class="lbl">Due ${fmt(c.due)}</span><span class="chip ${sclass(c.status)}">${c.status}</span></div></div>`).join("");
- renderLeaders();renderSelectors();
-}
-function renderLeaders(){
- let arr=quotas().filter(e=>e.active&&e.credits>0).sort((a,b)=>b.credits-a.credits||a.name.localeCompare(b.name));
- if(!arr.length){document.querySelector("#leaders").innerHTML=`<div class="lrow"><div class="lrank">—</div><div class="lname">No details in the last 30 days</div><div></div></div>`;return}
- let last=null,rank=0;arr=arr.map((e,i)=>{if(e.credits!==last){rank=i+1;last=e.credits}return{...e,rank}});
- let cutoff=arr.length>=5?arr[4].rank:Infinity, shown=arr.filter(e=>e.rank<=cutoff);
- document.querySelector("#leaders").innerHTML=shown.map(e=>`<div class="lrow"><div class="lrank">#${e.rank}</div><div><div class="lname">${e.name}</div><div class="lbl">${e.initials}</div></div><div class="lcred">${e.credits.toFixed(1)}</div></div>`).join("");
-}
-function renderSelectors(){
- let s=sorted();document.querySelector("#cartSelect").innerHTML=s.map(c=>`<option value="${c.cart}">Cart ${c.cart} — ${c.status} — ${c.days} days</option>`).join("");
- let o=state.employees.filter(e=>e.active).map(e=>`<option value="${e.initials}">${e.initials} — ${e.name}</option>`).join("");
- document.querySelector("#initial1").innerHTML=`<option value="">Choose…</option>${o}`;
- document.querySelector("#initial2").innerHTML=`<option value="">None</option>${o}`;
-}
-function renderCarts(){
- let q=document.querySelector("#cartSearch").value.trim(),f=document.querySelector("#statusFilter").value,rows=sorted().filter(c=>(!q||String(c.cart).includes(q))&&(!f||c.status===f));
- document.querySelector("#cartRows").innerHTML=rows.map((c,i)=>`<tr><td>${i+1}</td><td><strong>${c.cart}</strong></td><td>${fmt(c.lastDetailed)}</td><td>${c.days}</td><td>${fmt(c.due)}</td><td><span class="chip ${sclass(c.status)}">${c.status}</span></td><td>${c.lastInitials||"—"}</td></tr>`).join("");
-}
-function renderEmployees(){
- let rows=quotas().filter(e=>e.active).sort((a,b)=>b.left-a.left||a.name.localeCompare(b.name));
- document.querySelector("#employeeRows").innerHTML=rows.map((e,i)=>`<tr><td>${i+1}</td><td><strong>${e.name}</strong></td><td>${e.initials}</td><td>${e.type==="part"?"Part Time":"Full Time"}</td><td>${e.quota.toFixed(1)}</td><td>${e.credits.toFixed(1)}</td><td>${e.left.toFixed(1)}</td><td>${e.left<=0?'<span class="chip good">DONE</span>':`Needs ${e.left.toFixed(1)}`}</td></tr>`).join("");
-}
-function renderHistory(){
- let names=new Map(state.employees.map(e=>[e.initials,e.name]));
- document.querySelector("#historyRows").innerHTML=[...state.history].reverse().map(h=>`<tr><td>${fmt(h.date)}</td><td>${h.cart}</td><td>${h.initial1}</td><td>${h.initial2||"—"}</td><td>${names.get(h.initial1)||"—"}</td><td>${h.initial2?(names.get(h.initial2)||"—"):"—"}</td><td>${h.initial2?".5 each":"1.0"}</td><td>${fmt(plus(h.date,30))}</td></tr>`).join("");
-}
-function renderManage(){
- let qm=new Map(quotas().map(e=>[e.initials,e]));
- document.querySelector("#employeeCards").innerHTML=state.employees.map((e,i)=>{let q=qm.get(e.initials);return`<div class="ecard ${e.active?"":"inactive"}"><div class="ecardtop"><div><h4>${e.name}</h4><p>${e.initials} • ${e.type==="part"?"Part Time":"Full Time"}</p></div><span class="chip ${e.active?"good":"due"}">${e.active?"ACTIVE":"INACTIVE"}</span></div><p>Quota ${q.quota.toFixed(1)} • Credits ${q.credits.toFixed(1)} • Left ${q.left.toFixed(1)}</p><div class="actions"><button class="mini" onclick="toggleEmp(${i})">${e.active?"Deactivate":"Activate"}</button><button class="mini danger" onclick="deleteEmp(${i})">Delete</button></div></div>`}).join("");
-}
+function renderDashboard(){let carts=sorted(),top=carts.slice(0,5),current=carts.filter(c=>c.days<30).length;document.querySelector("#kpiCurrent").textContent=state.carts.length?Math.round(current/state.carts.length*100)+"%":"—";document.querySelector("#kpiDue").textContent=carts.filter(c=>c.status==="DUE").length;document.querySelector("#kpiSoon").textContent=carts.filter(c=>c.days>=23&&c.days<30).length;document.querySelector("#kpiEmployees").textContent=state.employees.filter(e=>e.active).length;document.querySelector("#queuePill").textContent=`${carts.filter(c=>c.status==="DUE").length} due now`;document.querySelector("#topFive").innerHTML=top.map((c,i)=>`<div class="prow"><div class="rank">${i+1}</div><div><span class="lbl">Cart</span><span class="cartno">#${c.cart}</span></div><div><span class="lbl">Last detailed</span><strong>${fmt(c.lastDetailed)}</strong></div><div><span class="lbl">Days since</span><strong>${c.days===9999?"—":c.days}</strong></div><div><span class="lbl">Due ${fmt(c.due)}</span><span class="chip ${sclass(c.status)}">${c.status}</span></div></div>`).join("")||"<p style='padding:10px'>No carts loaded.</p>";renderLeaders();renderSelectors()}
+function renderLeaders(){let arr=quotas().filter(e=>e.active&&e.credits>0).sort((a,b)=>b.credits-a.credits||a.name.localeCompare(b.name));if(!arr.length){document.querySelector("#leaders").innerHTML=`<div class="lrow"><div class="lrank">—</div><div class="lname">No details in the last 30 days</div><div></div></div>`;return}let last=null,rank=0;arr=arr.map((e,i)=>{if(e.credits!==last){rank=i+1;last=e.credits}return{...e,rank}});let cutoff=arr.length>=5?arr[4].rank:Infinity;document.querySelector("#leaders").innerHTML=arr.filter(e=>e.rank<=cutoff).map(e=>`<div class="lrow"><div class="lrank">#${e.rank}</div><div><div class="lname">${e.name}</div><div class="lbl">${e.initials}</div></div><div class="lcred">${e.credits.toFixed(1)}</div></div>`).join("")}
+function renderSelectors(){document.querySelector("#cartSelect").innerHTML=sorted().map(c=>`<option value="${c.cart}">Cart ${c.cart} — ${c.status}${c.days===9999?"":` — ${c.days} days`}</option>`).join("");let o=state.employees.filter(e=>e.active).map(e=>`<option value="${e.initials}">${e.initials} — ${e.name}</option>`).join("");document.querySelector("#initial1").innerHTML=`<option value="">Choose…</option>${o}`;document.querySelector("#initial2").innerHTML=`<option value="">None</option>${o}`}
+function renderCarts(){let q=document.querySelector("#cartSearch").value.trim(),f=document.querySelector("#statusFilter").value,rows=sorted().filter(c=>(!q||String(c.cart).includes(q))&&(!f||c.status===f));document.querySelector("#cartRows").innerHTML=rows.map((c,i)=>`<tr><td>${i+1}</td><td><strong>${c.cart}</strong></td><td>${fmt(c.lastDetailed)}</td><td>${c.days===9999?"—":c.days}</td><td>${fmt(c.due)}</td><td><span class="chip ${sclass(c.status)}">${c.status}</span></td><td>${c.lastInitials||"—"}</td></tr>`).join("")}
+function renderEmployees(){let rows=quotas().filter(e=>e.active).sort((a,b)=>b.left-a.left||a.name.localeCompare(b.name));document.querySelector("#employeeRows").innerHTML=rows.map((e,i)=>`<tr><td>${i+1}</td><td><strong>${e.name}</strong></td><td>${e.initials}</td><td>${e.type==="part"?"Part Time":"Full Time"}</td><td>${e.quota.toFixed(1)}</td><td>${e.credits.toFixed(1)}</td><td>${e.left.toFixed(1)}</td><td>${e.left<=0?'<span class="chip good">DONE</span>':`Needs ${e.left.toFixed(1)}`}</td></tr>`).join("")}
+function renderHistory(){let names=new Map(state.employees.map(e=>[e.initials,e.name]));document.querySelector("#historyRows").innerHTML=[...state.history].reverse().map(h=>`<tr><td>${fmt(h.date)}</td><td>${h.cart}</td><td>${h.initial1}</td><td>${h.initial2||"—"}</td><td>${names.get(h.initial1)||"—"}</td><td>${h.initial2?(names.get(h.initial2)||"—"):"—"}</td><td>${h.initial2?".5 each":"1.0"}</td><td>${fmt(plus(h.date,30))}</td></tr>`).join("")}
+function renderManage(){let qm=new Map(quotas().map(e=>[e.initials,e]));document.querySelector("#employeeCards").innerHTML=state.employees.map(e=>{let q=qm.get(e.initials);return`<div class="ecard ${e.active?"":"inactive"}"><div class="ecardtop"><div><h4>${e.name}</h4><p>${e.initials} • ${e.type==="part"?"Part Time":"Full Time"}</p></div><span class="chip ${e.active?"good":"due"}">${e.active?"ACTIVE":"INACTIVE"}</span></div><p>Quota ${q.quota.toFixed(1)} • Credits ${q.credits.toFixed(1)} • Left ${q.left.toFixed(1)}</p><div class="actions"><button class="mini" onclick="toggleEmp('${e.id}',${!e.active})">${e.active?"Deactivate":"Activate"}</button></div></div>`}).join("")}
 function render(){renderDashboard();renderCarts();renderEmployees();renderHistory();renderManage()}
-function toast(x){let t=document.querySelector("#toast");t.textContent=x;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2600)}
 
-document.querySelector("#detailForm").addEventListener("submit",e=>{
- e.preventDefault();let cart=+cartSelect.value,date=detailDate.value,i1=initial1.value,i2=initial2.value;
- if(!cart||!date||!i1)return toast("Cart, date and Initial 1 are required.");if(i1===i2&&i2)return toast("Initial 1 and Initial 2 must be different.");
- let c=state.carts.find(x=>x.cart===cart);c.lastDetailed=date;c.lastInitials=i2?`${i1}/${i2}`:i1;
- state.history.push({cart,date,initial1:i1,initial2:i2||""});if(state.history.length>LIMIT)state.history=state.history.slice(-LIMIT);save();render();
- e.target.reset();detailDate.value=ds();toast(`Cart ${cart} recorded. Next due ${fmt(plus(date,30))}.`);
-});
-document.querySelector("#employeeForm").addEventListener("submit",e=>{
- e.preventDefault();let name=empName.value.trim(),initials=empInitials.value.trim().toUpperCase(),type=empType.value;if(state.employees.some(x=>x.initials.toUpperCase()===initials))return toast("Those initials are already assigned.");
- state.employees.push({name,initials,type,active:true});save();render();e.target.reset();toast(`${name} added.`);
-});
-window.toggleEmp=i=>{state.employees[i].active=!state.employees[i].active;save();render()};
-window.deleteEmp=i=>{let e=state.employees[i];if(confirm(`Delete ${e.name}? Existing history will remain.`)){state.employees.splice(i,1);save();render()}};
+document.querySelector("#detailForm").addEventListener("submit",async e=>{e.preventDefault();let cart=+cartSelect.value,date=detailDate.value,i1=initial1.value,i2=initial2.value;if(!cart||!date||!i1)return toast("Cart, date and Initial 1 are required.");if(i1===i2&&i2)return toast("Initial 1 and Initial 2 must be different.");try{cloud("Saving…");await api("detail_history",{method:"POST",body:JSON.stringify({cart_number:cart,detail_date:date,employee_1:i1,employee_2:i2||null})});await api(`carts?cart_number=eq.${cart}`,{method:"PATCH",body:JSON.stringify({last_detailed:date,last_initials:i2?`${i1}/${i2}`:i1})});await loadShared(true);e.target.reset();detailDate.value=ds();toast(`Cart ${cart} recorded. Next due ${fmt(plus(date,30))}.`)}catch(err){console.error(err);cloud("Save failed","bad");toast("Detail was not saved. Send me a screenshot if this appears.")}});
+document.querySelector("#employeeForm").addEventListener("submit",async e=>{e.preventDefault();let name=empName.value.trim(),initials=empInitials.value.trim().toUpperCase(),type=empType.value;if(state.employees.some(x=>x.initials.toUpperCase()===initials))return toast("Those initials are already assigned.");try{await api("employees",{method:"POST",body:JSON.stringify({name,initials,employee_type:type,active:true})});e.target.reset();await loadShared(true);toast(`${name} added.`)}catch(err){console.error(err);toast("Employee was not added.")}});
+window.toggleEmp=async(id,active)=>{try{await api(`employees?id=eq.${encodeURIComponent(id)}`,{method:"PATCH",body:JSON.stringify({active})});await loadShared(true)}catch(err){console.error(err);toast("Employee status was not changed.")}};
 document.querySelector("#cartSearch").addEventListener("input",renderCarts);document.querySelector("#statusFilter").addEventListener("change",renderCarts);
-document.querySelector("#csvBtn").addEventListener("click",()=>{let names=new Map(state.employees.map(e=>[e.initials,e.name])),rows=[["Date","Cart","Initial 1","Initial 2","Employee 1","Employee 2","Credit","Next Due"]];state.history.forEach(h=>rows.push([h.date,h.cart,h.initial1,h.initial2||"",names.get(h.initial1)||"",h.initial2?(names.get(h.initial2)||""):"",h.initial2?".5 each":"1.0",plus(h.date,30)]));let csv=rows.map(r=>r.map(v=>`"${String(v).replaceAll('"','""')}"`).join(",")).join("\n"),a=document.createElement("a");a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv"}));a.download="golf-cart-history.csv";a.click();});
-document.querySelector("#exportBackup").addEventListener("click",()=>{let a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(state,null,2)],{type:"application/json"}));a.download="golf-cart-backup.json";a.click()});
-document.querySelector("#importBackup").addEventListener("change",e=>{let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let x=JSON.parse(r.result);if(!x.carts||!x.employees||!x.history)throw 0;state=x;save();render();toast("Backup restored.")}catch(_){toast("That backup file is not valid.")}};r.readAsText(f)});
+document.querySelector("#csvBtn").addEventListener("click",()=>{let names=new Map(state.employees.map(e=>[e.initials,e.name])),rows=[["Date","Cart","Initial 1","Initial 2","Employee 1","Employee 2","Credit","Next Due"]];state.history.forEach(h=>rows.push([h.date,h.cart,h.initial1,h.initial2||"",names.get(h.initial1)||"",h.initial2?(names.get(h.initial2)||""):"",h.initial2?".5 each":"1.0",plus(h.date,30)]));let csv=rows.map(r=>r.map(v=>`"${String(v).replaceAll('"','""')}"`).join(",")).join("\n"),a=document.createElement("a");a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv"}));a.download="golf-cart-history.csv";a.click()});
 document.querySelectorAll(".nav button").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".nav button").forEach(x=>x.classList.remove("active"));document.querySelectorAll(".view").forEach(x=>x.classList.remove("active"));b.classList.add("active");document.querySelector("#"+b.dataset.view).classList.add("active")}));
-detailDate.value=ds();document.querySelector("#clock").textContent=new Date().toLocaleString([], {dateStyle:"medium",timeStyle:"short"});render();
-setInterval(()=>{document.querySelector("#clock").textContent=new Date().toLocaleString([], {dateStyle:"medium",timeStyle:"short"});render()},60000);
+detailDate.value=ds();function tick(){document.querySelector("#clock").textContent=new Date().toLocaleString([],{dateStyle:"medium",timeStyle:"short"})}tick();loadShared();setInterval(tick,60000);setInterval(()=>loadShared(true),30000);
 </script>
-</body>
-</html>
+</body></html>
